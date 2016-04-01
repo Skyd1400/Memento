@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('memento.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
@@ -41,16 +41,17 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
+.controller('CoursCtrl', function($scope, $http) {
+  $http.get('data/docsets/docsets.json').then(function (response) {
+    //TODO check response data
+    $scope.docsets = response.data;
+  })
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+.controller('CourseCtrl', function($scope, $stateParams, $http, $ionicNavBarDelegate) {
+  $http.get('data/docsets/'+$stateParams.coursId+'/docset.json').then(function (response) {
+    //TODO check response data
+    $scope.data = response.data;
+    $ionicNavBarDelegate.title($scope.data.category);
+  });
 });

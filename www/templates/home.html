@@ -1,0 +1,13 @@
+<ion-view view-title="Memento">
+    <ion-content class="stable-bg" overflow-scroll="true">
+        <div class="list condensed-space no-padding">
+            <div class="card dark-bg" ng-repeat="docset in docsets">
+                <a ui-sref="app.course({coursId: docset.id })"
+                        class="item clear-bg item-bg-image waves-effect waves-button waves-light">
+                    <h2>{{ docset.name }}</h2>
+                    <img ng-src="../data/docsets/{{ docset.id }}/sc.jpg" >
+                </a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

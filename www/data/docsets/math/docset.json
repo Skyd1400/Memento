@@ -1,0 +1,25 @@
+{
+  "category" : "Mathematiques",
+  "courses": [
+    {
+      "name": "Analyse",
+      "id": "ana"
+    },
+    {
+      "name": "Algebre",
+      "id": "alg"
+    },
+    {
+      "name": "Probabilite",
+      "id": "prob"
+    },
+    {
+      "name": "Nombre Complexe",
+      "id": "compl"
+    },
+    {
+      "name": "Geometrie",
+      "id": "geo"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+<ion-view view-title="{{ data.category }}">
+  <ion-content class="stable-bg" overflow-scroll="true">
+    <ion-list>
+      <div class="list condensed-space no-padding">
+        <div class="card assertive-bg" ng-repeat="course in data.courses">
+          <a ui-sref="app.chapters({coursId: docset.id })"
+             class="item clear-bg item-bg-image waves-effect waves-button waves-light">
+            <h2>{{ course.name }}</h2>
+          </a>
+        </div>
+      </div>
+    </ion-list>
+  </ion-content>
+</ion-view>
